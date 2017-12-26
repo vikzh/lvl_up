@@ -28,22 +28,28 @@ var_dump(translitString('Виктор'));
 // например, func(3, 'яблоко', 'яблока', 'яблок').
 
 function oneOrMany($col,$oneName, $lessThanFive, $moreThanFour){
+    if ( $col > 20 ) {
+        $col = substr( $col, -1 );
+    }
     switch ($col){
+        case 0 :
+            echo  $moreThanFour,"\n";
+            break;
         case 1 :
             echo $oneName,"\n";
             break;
         case  $col > 1 && $col <=4 :
             echo $lessThanFive,"\n";
             break;
-        case $col > 4 :
+        case $col >= 10 && $col <= 20:
             echo $moreThanFour,"\n";
             break;
         default :
-            echo "some error","\n";
+            echo $moreThanFour,"\n";
     }
 }
 
-oneOrMany(9,'Яблоко','Яблока','Яблок');
+oneOrMany(21,'Яблоко','Яблока','Яблок');
 
 
 // 3. Найдите все счастливые билеты. Счастливый билет - это билет,
