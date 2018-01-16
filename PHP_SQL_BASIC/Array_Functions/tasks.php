@@ -6,67 +6,67 @@ $arr_task1 = [1, 2, 3, 0, -1, 'a', 'z', 'q'];
 echo count($arr_task1), "\n";
 
 // 2. Дан массив $arr. С помощью функции count выведите последний элемент данного массива
-echo $arr_task1[count($arr_task1) - 1],"\n";
+echo $arr_task1[count($arr_task1) - 1], "\n";
 
 // 3. Дан массив с числами. Проверьте, что в нем есть элемент со значением 3
-echo in_array(3,$arr_task1),"\n";
+echo in_array(3, $arr_task1), "\n";
 
 // 4. Дан массив [1, 2, 3, 4, 5]. Найдите сумму элементов данного массива.
-$arr_task4 = [1,2,3,4,5];
-echo array_sum($arr_task4),"\n";
+$arr_task4 = [1, 2, 3, 4, 5];
+echo array_sum($arr_task4), "\n";
 
 // 5. Дан массив [1, 2, 3, 4, 5]. Найдите произведение (умножение) элементов данного массива.
-echo array_product($arr_task4),"\n";
+echo array_product($arr_task4), "\n";
 
 // 6. Дан массив $arr. С помощью функций array_sum и count найдите среднее арифметическое элементов
 // (сумма элементов делить на их количество) данного массива
-echo array_sum($arr_task4) / count($arr_task4),"\n";
+echo array_sum($arr_task4) / count($arr_task4), "\n";
 
 // 7. Создайте массив, заполненный числами от 1 до 100
-var_dump(range(1,100));
+var_dump(range(1, 100));
 
 // 8. Создайте массив, заполненный буквами от 'a' до 'z'
-var_dump(range('a','z'));
+var_dump(range('a', 'z'));
 
 // 9. Создайте строку '1-2-3-4-5-6-7-8-9' не используя цикл
-var_dump(implode('-',range(1,9)));
+var_dump(implode('-', range(1, 9)));
 
 // 10. Найдите сумму чисел от 1 до 100 не используя цикл
-echo array_sum(range(1,100)),"\n";
+echo array_sum(range(1, 100)), "\n";
 
 // 11. Найдите произведение чисел от 1 до 10 не используя цикл
-echo array_product(range(1,10)),"\n";
+echo array_product(range(1, 10)), "\n";
 
 // 12. Даны два массива: первый с элементами 1, 2, 3, второй с элементами 'a', 'b', 'c'.
 // Сделайте из них массив с элементами 1, 2, 3, 'a', 'b', 'c'
-$arrNumeric_task12 = [1,2,3];
-$arrChar_task12 = ['a','b','c'];
-var_dump(array_merge($arrNumeric_task12,$arrChar_task12));
+$arrNumeric_task12 = [1, 2, 3];
+$arrChar_task12 = ['a', 'b', 'c'];
+var_dump(array_merge($arrNumeric_task12, $arrChar_task12));
 
 // 13.  Дан массив с элементами 1, 2, 3, 4, 5. С помощью функции array_slice создайте из него массив
 // $result с элементами 2, 3, 4.
-var_dump(array_slice($arr_task4,1,3));
+var_dump(array_slice($arr_task4, 1, 3));
 
 // 14. Дан массив [1, 2, 3, 4, 5]. С помощью функции array_splice преобразуйте массив в [1, 4, 5]
-$arr_task14 = [1,2,3,4,5];
-array_splice($arr_task14,1,2);
+$arr_task14 = [1, 2, 3, 4, 5];
+array_splice($arr_task14, 1, 2);
 var_dump($arr_task14);
 
 // 15. Дан массив [1, 2, 3, 4, 5]. С помощью функции array_splice запишите в новый массив элементы [2, 3, 4].
-$arr_task15 = [1,2,3,4,5];
-var_dump(array_splice($arr_task15,1,3));
+$arr_task15 = [1, 2, 3, 4, 5];
+var_dump(array_splice($arr_task15, 1, 3));
 
 // 16. Дан массив [1, 2, 3, 4, 5]. С помощью функции array_splice сделайте из него массив [1, 2, 3, 'a', 'b', 'c', 4, 5].
-$arr_task16 = [1,2,3,4,5];
-array_splice($arr_task16,3,0,['a','b','c']);
+$arr_task16 = [1, 2, 3, 4, 5];
+array_splice($arr_task16, 3, 0, ['a', 'b', 'c']);
 var_dump($arr_task16);
 
 // 17. Дан массив [1, 2, 3, 4, 5]. С помощью функции array_splice сделайте
 // из него массив [1, 'a', 'b', 2, 3, 4, 'c', 5, 'e'].
-$arr_task17 = [1,2,3,4,5];
-array_splice($arr_task17,1,0,['a','b']);
-array_splice($arr_task17,6,0,['c']);
-array_splice($arr_task17,-2,0,['e']);
+$arr_task17 = [1, 2, 3, 4, 5];
+array_splice($arr_task17, 1, 0, ['a', 'b']);
+array_splice($arr_task17, 6, 0, ['c']);
+array_splice($arr_task17, -2, 0, ['e']);
 var_dump($arr_task17);
 
 // 18. Дан массив 'a'=>1, 'b'=>2, 'c'=>3'. Запишите в массив $keys ключи из этого массива, а в $values – значения.
@@ -77,27 +77,135 @@ var_dump($keys);
 var_dump($values);
 
 // 19. Даны два массива: ['a', 'b', 'c'] и [1, 2, 3]. Создайте с их помощью массив 'a'=>1, 'b'=>2, 'c'=>3'
-$arr_task19 = array_combine($keys,$values);
+$arr_task19 = array_combine($keys, $values);
 var_dump($arr_task19);
 
 // 20. Дан массив 'a'=>1, 'b'=>2, 'c'=>3. Поменяйте в нем местами ключи и значения.
 var_dump(array_flip($arr_task19));
 
 // 21. Дан массив с элементами 1, 2, 3, 4, 5. Сделайте из него массив с элементами 5, 4, 3, 2, 1
-$arr_task21 = [1,2,3,4,5];
+$arr_task21 = [1, 2, 3, 4, 5];
 var_dump(array_reverse($arr_task21));
 
 // 22. Дан массив ['a', '-', 'b', '-', 'c', '-', 'd']. Найдите позицию первого элемента '-'.
 $arr_task22 = ['a', '-', 'c', '-', 'd'];
-echo array_search('-',$arr_task22),"\n";
+echo array_search('-', $arr_task22), "\n";
 
 // 23. Дан массив ['a', '-', 'b', '-', 'c', '-', 'd'].
 // Найдите позицию первого элемента '-' и удалите его с помощью функции array_splice
-array_splice($arr_task22,array_search('-',$arr_task22),1);
+array_splice($arr_task22, array_search('-', $arr_task22), 1);
 var_dump($arr_task22);
 
 // 24. Дан массив ['a', 'b', 'c', 'd', 'e']. Поменяйте элемент с ключом 0 на '!', а элемент с ключом 3 - на '!!'
-$arr_task24 = ['a', 'b','c', 'd', 'e'];
-var_dump($arr_task24 = array_replace($arr_task24,[0 => '!',3 => '!!']));
+$arr_task24 = ['a', 'b', 'c', 'd', 'e'];
+var_dump($arr_task24 = array_replace($arr_task24, [0 => '!', 3 => '!!']));
+
+//25. Дан массив '3'=>'a', '1'=>'c', '2'=>'e', '4'=>'b'. Попробуйте на нем различные типы сортировок
+$arr_task25 = ['3' => 'a', '1' => 'c', '2' => 'e', '4' => 'b'];
+sort($arr_task25);
+var_dump($arr_task25);
+ksort($arr_task25);
+var_dump($arr_task25);
+rsort($arr_task25);
+var_dump($arr_task25);
+//var_dump(usort($arr_task25));
+
+//26. Дан массив с элементами 'a'=>1, 'b'=>2, 'c'=>3. Выведите на экран случайный ключ из данного массива.
+$arr_task26 = ['a' => 1, 'b' => 2, 'c' => 3];
+echo array_rand($arr_task26), '<br>';
+
+//27. Дан массив с элементами 'a'=>1, 'b'=>2, 'c'=>3. Выведите на экран случайный элемент данного массива
+echo $arr_task26[array_rand($arr_task26)];
+
+//28. Дан массив $arr. Перемешайте его элементы в случайном порядке
+shuffle($arr_task26);
+var_dump($arr_task26);
+
+//29.Заполните массив числами от 1 до 25 с помощью range, а затем перемешайте его элементы в случайном порядке.
+$arr_task29 = range(1, 25);
+shuffle($arr_task29);
+var_dump($arr_task29);
+
+//30. Создайте массив, заполненный буквами от 'a' до 'z' так, чтобы буквы шли в случайном порядке и не повторялись.
+$arr_task30 = range('a', 'z');
+shuffle($arr_task30);
+var_dump($arr_task30);
+
+//31.Сделайте строку длиной 6 символов, состоящую из маленьких английских букв, расположенных в случайном порядке.
+// Буквы не должны повторяться
+$arr_task31 = range('a', 'z');
+shuffle($arr_task31);
+var_dump(implode('', array_slice($arr_task31, 0, 6)));
+
+//32.Дан массив с элементами 'a', 'b', 'c', 'b', 'a'. Удалите из него повторяющиеся элементы
+$arr_task32 = ['a', 'b', 'c', 'b', 'a'];
+var_dump(array_unique($arr_task32));
+
+//33. Дан массив с элементами 1, 2, 3, 4, 5. Выведите на экран его первый и последний элемент, причем так,
+// чтобы в исходном массиве они исчезли
+$arr_task33 = [1, 2, 3, 4, 5];
+var_dump(array_shift($arr_task33), array_pop($arr_task33));
+
+//34.Дан массив с элементами 1, 2, 3, 4, 5. Добавьте ему в начало элемент 0, а в конец - элемент 6
+$arr_task34 = [1, 2, 3, 4, 5];
+array_unshift($arr_task34, 0);
+array_push($arr_task34, 6);
+var_dump($arr_task34);
+
+//35.Дан массив с элементами 1, 2, 3, 4, 5, 6, 7, 8. С помощью цикла и функций array_shift и array_pop
+// выведите на экран его элементы в следующем порядке: 18273645
+$arr_task35 = [1, 2, 3, 4, 5, 6, 7, 8];
+while (count($arr_task35) > 0) {
+    echo array_shift($arr_task35), array_pop($arr_task35);
+}
+
+$arr = array_fill(0, 3, array_fill(0, 5, 'x'));
+var_dump($arr);
+
+//36. Дан массив с элементами 'a', 'b', 'c'.
+// Сделайте из него массив с элементами 'a', 'b', 'c', '-', '-', '-'.
+$arr_task36 = ['a', 'b', 'c'];
+var_dump(array_pad($arr_task36, 6, '-'));
+
+//37.Заполните массив 10-ю буквами 'x'
+var_dump(array_fill(0, 10, 'x'));
+
+//38.Создайте массив, заполненный целыми числами от 1 до 20.
+// С помощью функции array_chunk разбейте этот массив на 5 подмассивов ([1, 2, 3, 4]; [5, 6, 7, 8] и т.д.)
+var_dump(array_chunk(range(1, 20), 4));
+
+
+//39. Дан массив с элементами 'a', 'b', 'c', 'b', 'a'. Подсчитайте сколько раз встречается каждая из букв
+$arr_task39 = ['a', 'b', 'c', 'b', 'a'];
+print_r(array_count_values($arr_task39));
+
+
+//40. Дан массив с элементами 1, 2, 3, 4, 5.
+// Создайте новый массив, в котором будут лежать квадратные корни данных элементов
+$arr_task40 = [1, 2, 3, 4, 5];
+$arr2_task40 = array_map('sqrt', $arr_task40);
+var_dump($arr2_task40);
+//41. Дан массив с элементами '<b>php</b>', '<i>html</i>'.
+// Создайте новый массив, в котором из элементов будут удалены теги
+$arr_task41 = ['<b>php</b>', '<i>html</i>'];
+$arr2_task41 = array_map('strip_tags', $arr_task41);
+var_dump($arr2_task41);
+//42.Дан массив с элементами ' a ', ' b ', ' с '.
+// Создайте новый массив, в котором будут данные элементы без концевых пробелов
+$arr_task42 = [' a ', ' b ', ' c '];
+var_dump(array_map('trim', $arr_task42));
+
+
+//43. Дан массив с элементами 1, 2, 3, 4, 5 и массив с элементами 3, 4, 5, 6, 7.
+// Запишите в новый массив элементы, которые есть и в том, и в другом массиве.
+$arr1_task43 = [1, 2, 3, 4, 5];
+$arr2_task43 = [3, 4, 5, 6, 7];
+var_dump(array_intersect($arr1_task43, $arr2_task43));
+
+//44.Дан массив с элементами 1, 2, 3, 4, 5 и массив с элементами 3, 4, 5, 6, 7.
+// Запишите в новый массив элементы, которые не присутствуют в обоих массивах одновременно
+$arr1_task44 = [1, 2, 3, 4, 5];
+$arr2_task44 = [3, 4, 5, 6, 7];
+var_dump(array_diff($arr2_task44, $arr1_task44));
 
 echo '</pre>';
