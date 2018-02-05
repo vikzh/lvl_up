@@ -172,6 +172,7 @@ class Worker_task5 extends User_task5
         $this->salary = $salary;
     }
 }
+
 $objWorker1_task5 = new Worker_task5();
 $objWorker1_task5->setName('Ivan');
 $objWorker1_task5->setAge(25);
@@ -182,7 +183,7 @@ $objWorker2_task5->setName('Vasa');
 $objWorker2_task5->setAge(26);
 $objWorker2_task5->setSalary(2000);
 
-echo 'Sum:',$objWorker1_task5->getSalary() + $objWorker2_task5->getSalary();
+echo 'Sum:', $objWorker1_task5->getSalary() + $objWorker2_task5->getSalary();
 
 class Driver extends Worker_task5
 {
@@ -195,54 +196,63 @@ class Driver extends Worker_task5
         $this->rank = $rank;
     }
 
-    public function getExperience(){
+    public function getExperience()
+    {
         return $this->experience;
     }
 
-    public function getRank(){
+    public function getRank()
+    {
         return $this->rank;
     }
 
 }
 
-$objDriver_task6 = new Driver(10,'A');
-echo $objDriver_task6->getExperience(),$objDriver_task6->getRank();
+$objDriver_task6 = new Driver(10, 'A');
+echo $objDriver_task6->getExperience(), $objDriver_task6->getRank();
 
 class Form
 {
-    public function input($args){
+    public function input($args)
+    {
         $attributes = $this->makeAttribute($args);
         return "<input $attributes>";
     }
 
-    public function submit($args){
+    public function submit($args)
+    {
         $attributes = $this->makeAttribute($args);
         return "<input type = \"submit\" $attributes>";
     }
 
-    public function password($args){
+    public function password($args)
+    {
         $attributes = $this->makeAttribute($args);
         return "<input type = \"password\" $attributes>";
     }
 
-    public function textarea($args){
+    public function textarea($args)
+    {
         $attributes = $this->makeAttribute($args);
         return "<textarea $attributes></textarea>";
     }
 
-    public function open($args){
+    public function open($args)
+    {
         $attributes = $this->makeAttribute($args);
         return "<form $attributes>";
     }
 
-    public function close($args){
+    public function close($args)
+    {
         $attributes = $this->makeAttribute($args);
         return "</form $attributes>";
     }
 
-    protected function makeAttribute($args){
+    protected function makeAttribute($args)
+    {
         $attributes = '';
-        foreach ($args as $key => $value){
+        foreach ($args as $key => $value) {
             $attributes .= "$key=\"$value\" ";
         }
         return $attributes;
@@ -250,15 +260,16 @@ class Form
 }
 
 $form = new Form();
-echo $form->input(['type'=>'text', 'value'=>'!!!']);
+echo $form->input(['type' => 'text', 'value' => '!!!']);
 
 
 //Создайте класс SmartForm, который будет наследовать от Form из предыдущей задачи
 // и сохранять значения инпутов и textarea после отправки.
 class SmartForm extends Form
 {
-    protected function makeAttribute($args){
-        if (isset($_REQUEST[$args['value']])){
+    protected function makeAttribute($args)
+    {
+        if (isset($_REQUEST[$args['value']])) {
             $args['value'] = $_REQUEST[$args['value']];
         }
         parent::makeAttribute($args);
@@ -270,16 +281,19 @@ class SmartForm extends Form
 
 class Cookie
 {
-    public function getCookie($name){
+    public function getCookie($name)
+    {
         return $_COOKIE[$name];
     }
 
-    public function setCookie($name,$value){
-        setcookie($name,$value,time() + 60 * 3600);
+    public function setCookie($name, $value)
+    {
+        setcookie($name, $value, time() + 60 * 3600);
     }
 
-    public function delCookie($name){
-        setcookie($name,'',time());
+    public function delCookie($name)
+    {
+        setcookie($name, '', time());
     }
 }
 
@@ -293,23 +307,28 @@ class Session
         session_start();
     }
 
-    public function createSession($name,$value){
+    public function createSession($name, $value)
+    {
         $_SESSION[$name] = $value;
     }
 
-    public function getSession($name){
+    public function getSession($name)
+    {
         return $_SESSION[$name];
     }
 
-    public function issetSession($name){
-        if (isset($_SESSION[$name])){
+    public function issetSession($name)
+    {
+        if (isset($_SESSION[$name])) {
             return true;
         }
         return false;
     }
-     public function delSession($name){
+
+    public function delSession($name)
+    {
         unset($_SESSION[$name]);
-     }
+    }
 }
 
 //  Реализуйте класс Flash, который будет использовать внутри себя класс Session из предыдущей задачи (именно использовать, а не наследовать).
@@ -329,11 +348,13 @@ class Flash
         $this->message = new Session();
     }
 
-    public function setMessage($value){
-        $this->message->createSession('form',$value);
+    public function setMessage($value)
+    {
+        $this->message->createSession('form', $value);
     }
 
-    public function getMessage(){
+    public function getMessage()
+    {
         $this->message->getSession('form');
     }
 }
@@ -353,51 +374,80 @@ class Db
 
     public function __construct()
     {
-        $this->connection = new mysqli($this->getHost(),$this->getUser(),$this->getPassword(),$this->getDatabase());
+        $this->connection = new mysqli($this->getHost(), $this->getUser(), $this->getPassword(), $this->getDatabase());
     }
 
-    public function getHost(){
+    public function getHost()
+    {
         return $this->host;
     }
 
-    public function getUser(){
+    public function getUser()
+    {
         return $this->user;
     }
 
-    public function getPassword(){
+    public function getPassword()
+    {
         return $this->password;
     }
 
-    public function getDatabase(){
+    public function getDatabase()
+    {
         return $this->database;
     }
-    public function getTable(){
+
+    public function getTable()
+    {
         return $this->table;
     }
 
-    public function setTable($tableName){
+    public function setTable($tableName)
+    {
         $this->table = $tableName;
     }
 
-    public function selectData($field){
-        return $this->makeQuery("SELECT $field FROM $this->table");
+    public function selectData($fields)
+    {
+        $query = 'SELECT ';
+        foreach ($fields as $field) {
+            $query .= $field;
+        }
+        $query .= " FROM $this->table";
+        return $this->makeQuery($query);
     }
 
-    public function deleteData($field,$id){
+    public function insertData($values)
+    {
+        $query = "INSERT INTO $this->table SET ";
+        foreach ($values as $key => $value) {
+            $query .= $key . " = " . "$value";
+        }
+        $this->makeQuery($query);
+    }
+
+    public function deleteData($field, $id)
+    {
         return $this->makeQuery("DELETE $field FROM $this->table WHERE id = $id");
     }
 
-    public function getCount(){
+    public function getCount()
+    {
         return $this->makeQuery("SELECT COUNT(*) FROM $this->table");
     }
 
-    public function clearTable(){
+    public function clearTable()
+    {
         return $this->makeQuery("TRUNCATE TABLE $this->table");
     }
-    public function deleteTable(){
+
+    public function deleteTable()
+    {
         return $this->makeQuery("DROP TABLE $this->table");
     }
-    private function makeQuery($query){
+
+    protected function makeQuery($query)
+    {
         return $this->connection->query($query);
     }
 }
@@ -409,5 +459,26 @@ class Db
 
 class Log
 {
+    private $db;
 
+    public function __construct()
+    {
+        $this->db = new Db();
+        $this->db->setTable('logs');
+    }
+
+    public function saveLog($log)
+    {
+        return $this->db->insertData(['log' => $log]);
+    }
+
+    public function clearLogs()
+    {
+        return $this->db->clearTable();
+    }
+
+    public function getlog()
+    {
+        return $this->db->selectData('log');
+    }
 }
