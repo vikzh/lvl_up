@@ -32,7 +32,7 @@ trait PriceUtilities
 
     function calculateTax($price)
     {
-        return ($this->getTaxRate() / 100) * $price);
+        return (($this->getTaxRate() / 100) * $price);
     }
 }
 
@@ -261,11 +261,11 @@ class BookProduct extends ShopProduct
     }
 }
 
-$dsn = "sqlite:products.db";
-$pdo = new PDO($dsn, null, null);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$obj = ShopProduct::getInstance(1, $pdo);
-
-$p = new ShopProduct();
-print $p->calculateTax(100) . "\n";
-print $p->generateId() . "\n";
+//$dsn = "sqlite:products.db";
+//$pdo = new PDO($dsn, null, null);
+//$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//$obj = ShopProduct::getInstance(1, $pdo);
+//
+//$p = new ShopProduct();
+//print $p->calculateTax(100) . "\n";
+//print $p->generateId() . "\n";
