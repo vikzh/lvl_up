@@ -33,8 +33,8 @@ class Address
     }
 }
 
-$address = new Address("441b Bakers Street")
-    print "Address: $address->streetaddress";
+$address = new Address("441b Bakers Street");
+print "Address: $address->streetaddress";
 
 
 class Person
@@ -109,6 +109,7 @@ class Person
     }
 
 }
+
 class PersonWriter
 {
     function writeName(Person $p)
