@@ -1,0 +1,9 @@
+<?php foreach ($posts as $post): ?>
+    <div>
+        <a href="/posts/<?= $post['id'] ?>/edit"><?= htmlspecialchars($post['name']) ?></a>
+        <form action="/posts/<?= $post['id'] ?>" method="post">
+            <input type="hidden" name="_METHOD" value="DELETE">
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+<?php endforeach ?>

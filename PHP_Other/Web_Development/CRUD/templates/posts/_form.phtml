@@ -1,0 +1,18 @@
+<div>
+    <label>
+        Имя *
+        <input type="text" name="post[name]" value="<?= isset($postData['name']) ? htmlspecialchars($postData['name']) : '' ?>">
+    </label>
+    <?php if (isset($errors['name'])): ?>
+        <div><?= $errors['name'] ?></div>
+    <?php endif ?>
+</div>
+<div>
+    <label>
+        Содержимое *
+    </label>
+    <textarea type="text" rows="20" cols="80" name="post[body]"><?= isset($postData['body']) ? htmlspecialchars($postData['body']) : '' ?></textarea>
+    <?php if (isset($errors['body'])): ?>
+        <div><?= $errors['body'] ?></div>
+    <?php endif ?>
+</div>

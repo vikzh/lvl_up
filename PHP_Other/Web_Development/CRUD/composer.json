@@ -1,0 +1,19 @@
+{
+  "autoload": {
+    "psr-4": {"App\\": "src/"},
+    "files": [
+    ]
+  },
+  "require": {
+    "slim/slim": "*",
+    "guzzlehttp/guzzle": "*",
+    "tightenco/collect": "*",
+    "slim/php-view": "*",
+    "slim/flash": "*",
+    "danielstjules/stringy": "*",
+    "fzaninotto/faker": "*"
+  },
+  "config": {
+    "vendor-dir": "/composer/vendor"
+  }
+}
